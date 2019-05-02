@@ -819,6 +819,9 @@ func initEnv(cmd *cobra.Command) {
 	// Init the bpf package after setting up the option config.
 	bpf.Init()
 
+	// Init the metrics package after setting up the option config.
+	metrics.Init(option.Config)
+
 	if option.Config.CMDRefDir != "" {
 		genMarkdown(cmd)
 	}
